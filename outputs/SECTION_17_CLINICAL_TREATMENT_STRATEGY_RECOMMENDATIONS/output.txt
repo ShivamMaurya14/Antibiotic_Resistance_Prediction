@@ -7,24 +7,24 @@ SECTION 17: CLINICAL TREATMENT STRATEGY RECOMMENDATIONS
 ----------------------------------------------------------------------------------------------------
 
   CEFTAZIDIME:
-    • Susceptible (S):  274 (100.0%)
+    • Susceptible (S):  123 ( 44.9%)
     • Intermediate (I):   0 (  0.0%)
-    • Resistant (R):      0 (  0.0%)
+    • Resistant (R):    151 ( 55.1%)
 
   GENTAMICIN:
-    • Susceptible (S):  274 (100.0%)
-    • Intermediate (I):   0 (  0.0%)
-    • Resistant (R):      0 (  0.0%)
+    • Susceptible (S):   12 (  4.4%)
+    • Intermediate (I):  10 (  3.6%)
+    • Resistant (R):    252 ( 92.0%)
 
   AUGMENTIN:
-    • Susceptible (S):  274 (100.0%)
-    • Intermediate (I):   0 (  0.0%)
-    • Resistant (R):      0 (  0.0%)
+    • Susceptible (S):   89 ( 32.5%)
+    • Intermediate (I): 112 ( 40.9%)
+    • Resistant (R):     73 ( 26.6%)
 
   CIPROFLOXACIN:
-    • Susceptible (S):  274 (100.0%)
+    • Susceptible (S):   27 (  9.9%)
     • Intermediate (I):   0 (  0.0%)
-    • Resistant (R):      0 (  0.0%)
+    • Resistant (R):    247 ( 90.1%)
 
   IMIPENEM:
     • Susceptible (S):    1 (  0.4%)
@@ -97,7 +97,7 @@ ANTIBIOTIC PROFILES:
   📊 Resistance Profile:
      ✗ CEFTAZIDIME    : R
      ✗ GENTAMICIN     : R
-     ✗ AUGMENTIN      : R
+     ⚠ AUGMENTIN      : I
      ✗ CIPROFLOXACIN  : R
      ✗ IMIPENEM       : R
 
@@ -114,7 +114,7 @@ ANTIBIOTIC PROFILES:
   📊 Resistance Profile:
      ✓ CEFTAZIDIME    : S
      ✗ GENTAMICIN     : R
-     ✗ AUGMENTIN      : R
+     ⚠ AUGMENTIN      : I
      ✓ CIPROFLOXACIN  : S
      ✗ IMIPENEM       : R
 
@@ -132,7 +132,7 @@ ANTIBIOTIC PROFILES:
   📊 Resistance Profile:
      ✓ CEFTAZIDIME    : S
      ✗ GENTAMICIN     : R
-     ✗ AUGMENTIN      : R
+     ⚠ AUGMENTIN      : I
      ✗ CIPROFLOXACIN  : R
      ✗ IMIPENEM       : R
 
@@ -149,7 +149,7 @@ ANTIBIOTIC PROFILES:
   📊 Resistance Profile:
      ✓ CEFTAZIDIME    : S
      ✗ GENTAMICIN     : R
-     ✗ AUGMENTIN      : R
+     ⚠ AUGMENTIN      : I
      ✗ CIPROFLOXACIN  : R
      ✗ IMIPENEM       : R
 
@@ -166,7 +166,7 @@ ANTIBIOTIC PROFILES:
   📊 Resistance Profile:
      ✓ CEFTAZIDIME    : S
      ✗ GENTAMICIN     : R
-     ✗ AUGMENTIN      : R
+     ⚠ AUGMENTIN      : I
      ✗ CIPROFLOXACIN  : R
      ✗ IMIPENEM       : R
 

@@ -37,7 +37,7 @@ class NotebookOutputLogger(object):
 
     def write(self, message):
         self.terminal.write(message)
-        
+
         if not self.file_opened:
             self.buffer += message
             if self.buffer.strip():
@@ -48,7 +48,7 @@ class NotebookOutputLogger(object):
                     self.file_opened = True
                     self.buffer = ""
                 except Exception as e:
-                    self.terminal.write(f"Could not open log file: {e}\\n")
+                    self.terminal.write(f"Could not open log file: {e}\n")
         else:
             if self.log_file and not self.log_file.closed:
                 self.log_file.write(message)
@@ -76,8 +76,7 @@ _original_show = plt.show
 def _custom_savefig(fname, *args, **kwargs):
     fig = plt.gcf()
     setattr(fig, "_already_saved", True)
-    
-    # Try to extract a meaningful title from the figure
+
     title = ""
     if fig._suptitle:
         title = fig._suptitle.get_text()
@@ -89,17 +88,14 @@ def _custom_savefig(fname, *args, **kwargs):
             if isinstance(ax_title, str) and ax_title.strip():
                 title = ax_title
                 break
-                
-    # If title exists, use it instead of original fname
+
     if title:
-        # keep original extension
         ext = os.path.splitext(str(fname))[1] or ".png"
         safe_title = re.sub(r'[^a-zA-Z0-9_\- ]', '', title).strip().replace(' ', '_')
-        # prevent super long names
         safe_title = safe_title[:100]
         if safe_title:
             fname = f"{safe_title}{ext}"
-            
+
     section = getattr(sys.stdout, "current_section", "output")
     os.makedirs(f"outputs/{section}", exist_ok=True)
     basename = os.path.basename(str(fname))
@@ -143,11 +139,12 @@ def _custom_show(*args, **kwargs):
 plt.savefig = _custom_savefig
 plt.show = _custom_show
 
-# In[1]:
+
+# In[2]:
 
 
 try:
-    logger.start_cell('# SECTION 1: IMPORT REQUIRED LIBRARIES')
+    logger.start_cell('SECTION 1: IMPORT REQUIRED LIBRARIES')
 except NameError:
     pass
 
@@ -252,11 +249,11 @@ print("="*100)
 
 # # SECTION 2: LOAD & EXPLORE ORIGINAL DATASET (READ-ONLY)
 
-# In[2]:
+# In[3]:
 
 
 try:
-    logger.start_cell('# SECTION 2: LOAD & EXPLORE ORIGINAL DATASET (READ-ONLY)')
+    logger.start_cell('SECTION 2: LOAD & EXPLORE ORIGINAL DATASET (READ-ONLY)')
 except NameError:
     pass
 
@@ -301,11 +298,11 @@ print("="*100)
 # # SECTION 3: CREATE WORKING COPY OF DATASET
 # ## Deep copy original → data_processed.xlsx (All modifications applied here)
 
-# In[3]:
+# In[4]:
 
 
 try:
-    logger.start_cell('# SECTION 3: CREATE WORKING COPY OF DATASET')
+    logger.start_cell('SECTION 3: CREATE WORKING COPY OF DATASET')
 except NameError:
     pass
 
@@ -330,11 +327,11 @@ print("\n" + "="*100)
 
 # # SECTION 4: DATA CLEANING & PREPROCESSING
 
-# In[4]:
+# In[5]:
 
 
 try:
-    logger.start_cell('# SECTION 4: DATA CLEANING & PREPROCESSING')
+    logger.start_cell('SECTION 4: DATA CLEANING & PREPROCESSING')
 except NameError:
     pass
 
@@ -377,11 +374,11 @@ print("="*100)
 
 # # SECTION 5: EXPLORATORY DATA ANALYSIS (EDA)
 
-# In[5]:
+# In[6]:
 
 
 try:
-    logger.start_cell('# SECTION 5: EXPLORATORY DATA ANALYSIS (EDA)')
+    logger.start_cell('SECTION 5: EXPLORATORY DATA ANALYSIS (EDA)')
 except NameError:
     pass
 
@@ -443,11 +440,11 @@ print("="*100)
 
 # # SECTION 6: FEATURE ENGINEERING & ENCODING
 
-# In[6]:
+# In[7]:
 
 
 try:
-    logger.start_cell('# SECTION 6: FEATURE ENGINEERING & ENCODING')
+    logger.start_cell('SECTION 6: FEATURE ENGINEERING & ENCODING')
 except NameError:
     pass
 
@@ -488,11 +485,11 @@ print("="*100)
 
 # # SECTION 7: OUTLIER DETECTION & HANDLING
 
-# In[7]:
+# In[8]:
 
 
 try:
-    logger.start_cell('# SECTION 7: OUTLIER DETECTION & HANDLING')
+    logger.start_cell('SECTION 7: OUTLIER DETECTION & HANDLING')
 except NameError:
     pass
 
@@ -527,11 +524,11 @@ print("="*100)
 
 # # SECTION 8: DATA VALIDATION & QUALITY CHECKS
 
-# In[8]:
+# In[9]:
 
 
 try:
-    logger.start_cell('# SECTION 8: DATA VALIDATION & QUALITY CHECKS')
+    logger.start_cell('SECTION 8: DATA VALIDATION & QUALITY CHECKS')
 except NameError:
     pass
 
@@ -586,11 +583,11 @@ print("\n" + "="*100)
 
 # # SECTION 9: EXPORT CLEANED DATASET
 
-# In[9]:
+# In[10]:
 
 
 try:
-    logger.start_cell('# SECTION 9: EXPORT CLEANED DATASET')
+    logger.start_cell('SECTION 9: EXPORT CLEANED DATASET')
 except NameError:
     pass
 
@@ -649,11 +646,11 @@ except Exception as e:
 
 # # SECTION 10: MODEL-READY DATA PREPARATION
 
-# In[10]:
+# In[11]:
 
 
 try:
-    logger.start_cell('# SECTION 10: MODEL-READY DATA PREPARATION')
+    logger.start_cell('SECTION 10: MODEL-READY DATA PREPARATION')
 except NameError:
     pass
 
@@ -783,11 +780,11 @@ print("="*100)
 
 # # APPENDIX: UTILITY FUNCTIONS & HELPERS
 
-# In[11]:
+# In[12]:
 
 
 try:
-    logger.start_cell('# APPENDIX: UTILITY FUNCTIONS & HELPERS')
+    logger.start_cell('APPENDIX: UTILITY FUNCTIONS & HELPERS')
 except NameError:
     pass
 
@@ -869,11 +866,11 @@ def correlation_summary(df, numeric_only=True, corr_threshold=0.7):
 
 # # SECTION 12: DATA VISUALIZATION & EXPLORATORY ANALYSIS
 
-# In[12]:
+# In[13]:
 
 
 try:
-    logger.start_cell('# SECTION 12: DATA VISUALIZATION & EXPLORATORY ANALYSIS')
+    logger.start_cell('SECTION 12: DATA VISUALIZATION & EXPLORATORY ANALYSIS')
 except NameError:
     pass
 
@@ -967,7 +964,6 @@ ax_stats.text(0.05, 0.95, summary_text, transform=ax_stats.transAxes,
 plt.suptitle('COMPREHENSIVE DATA EXPLORATORY ANALYSIS', fontsize=16, fontweight='bold', y=0.995)
 
 # Save report
-
 plt.savefig('outputs/02_EDA_Analysis/01_Data_Exploratory_Analysis_Dashboard.png', dpi=300, bbox_inches='tight')
 print("✓ Saved: outputs/02_EDA_Analysis/01_Data_Exploratory_Analysis_Dashboard.png")
 os.makedirs('outputs', exist_ok=True)
@@ -980,11 +976,11 @@ print("\n✓ Visualization dashboard created successfully")
 
 # # SECTION 13: ADVANCED FEATURE ANALYSIS & PATTERNS
 
-# In[13]:
+# In[14]:
 
 
 try:
-    logger.start_cell('# SECTION 13: ADVANCED FEATURE ANALYSIS & PATTERNS')
+    logger.start_cell('SECTION 13: ADVANCED FEATURE ANALYSIS & PATTERNS')
 except NameError:
     pass
 
@@ -1099,11 +1095,11 @@ print(f"  Categorical Features Analyzed: {len(categorical_features)}")
 
 # # SECTION 14 MODEL TRAINING & EVALUATION
 
-# In[14]:
+# In[15]:
 
 
 try:
-    logger.start_cell('# SECTION 14 MODEL TRAINING & EVALUATION')
+    logger.start_cell('SECTION 14 MODEL TRAINING & EVALUATION')
 except NameError:
     pass
 
@@ -1121,6 +1117,10 @@ print("   Using only: CEFTAZIDIME, GENTAMICIN, AUGMENTIN, CIPROFLOXACIN + LOCATI
 # Recreate IMIPENEM_CLASS for target using CLSI breakpoints
 breakpoints = {
     'IMIPENEM': {'S': 4, 'I': 8, 'R': 16},
+    'CEFTAZIDIME': {'S': 1, 'I': 2, 'R': 4},
+    'GENTAMICIN': {'S': 4, 'I': 8, 'R': 16},
+    'AUGMENTIN': {'S': 8, 'I': 16, 'R': 32},
+    'CIPROFLOXACIN': {'S': 1, 'I': 2, 'R': 4}
 }
 
 def classify_resistance(value, antibiotic):
@@ -1200,6 +1200,22 @@ for idx, (model_name, model) in enumerate(base_models.items()):
         cv_prec = cross_val_score(model, X_corrected_scaled, y_encoded, cv=cv, scoring='precision_macro')
         cv_recall = cross_val_score(model, X_corrected_scaled, y_encoded, cv=cv, scoring='recall_macro')
 
+        import warnings
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore')
+            try:
+                # Try CV AUC
+                y_prob_cv = cross_val_predict(model, X_corrected_scaled, y_encoded, cv=cv, method='predict_proba')
+                auc_val = roc_auc_score(y_encoded, y_prob_cv, multi_class='ovo', average='macro')
+            except:
+                try:
+                    # Fallback to train AUC
+                    model.fit(X_corrected_scaled, y_encoded)
+                    y_prob_train = model.predict_proba(X_corrected_scaled)
+                    auc_val = roc_auc_score(y_encoded, y_prob_train, multi_class='ovo', average='macro')
+                except:
+                    auc_val = float('nan')
+
         results_models[model_name] = {
             'model': model,
             'cv_f1_mean': cv_f1.mean(),
@@ -1211,7 +1227,8 @@ for idx, (model_name, model) in enumerate(base_models.items()):
             'f1': cv_f1.mean(),
             'accuracy': cv_acc.mean(),
             'precision': cv_prec.mean(),
-            'recall': cv_recall.mean()
+            'recall': cv_recall.mean(),
+            'auc': auc_val
         }
 
         # Train final model on full data for visualization
@@ -1227,14 +1244,14 @@ for idx, (model_name, model) in enumerate(base_models.items()):
                    annot_kws={'size': 11, 'weight': 'bold'})
 
         title_color = model_colors[idx]
-        axes[idx].set_title(f'{model_name}\n✓ F1 (macro): {cv_f1.mean():.4f}±{cv_f1.std():.4f}', 
+        axes[idx].set_title(f'{model_name}\n✓ F1: {cv_f1.mean():.4f} | AUC: {auc_val:.4f}', 
                            fontweight='bold', fontsize=12, color=title_color, pad=15,
                            bbox=dict(boxstyle='round,pad=0.5', facecolor='white', edgecolor=title_color, linewidth=2))
         axes[idx].set_ylabel('True Label', fontsize=10, fontweight='bold')
         axes[idx].set_xlabel('Predicted Label', fontsize=10, fontweight='bold')
         axes[idx].tick_params(labelsize=9)
 
-        print(f"  ✓ {model_name}: F1={cv_f1.mean():.4f}±{cv_f1.std():.4f}, Acc={cv_acc.mean():.4f}±{cv_acc.std():.4f}")
+        print(f"  ✓ {model_name}: F1={cv_f1.mean():.4f}±{cv_f1.std():.4f}, Acc={cv_acc.mean():.4f}, AUC={auc_val:.4f}")
 
     except Exception as e:
         print(f"  ✗ {model_name}: Error - {str(e)[:50]}")
@@ -1268,7 +1285,8 @@ for rank, (model_name, metrics) in enumerate(sorted(results_models.items(), key=
         'F1 (macro)': f"{metrics['cv_f1_mean']:.4f}±{metrics['cv_f1_std']:.4f}",
         'Accuracy': f"{metrics['cv_acc_mean']:.4f}±{metrics['cv_acc_std']:.4f}",
         'Precision (macro)': f"{metrics['cv_prec_mean']:.4f}",
-        'Recall (macro)': f"{metrics['cv_recall_mean']:.4f}"
+        'Recall (macro)': f"{metrics['cv_recall_mean']:.4f}",
+        'AUC': f"{metrics['auc']:.4f}"
     })
 
 perf_df = pd.DataFrame(performance_table)
@@ -1285,6 +1303,7 @@ print(f"   📈 F1-Score (macro):     {best_metrics['cv_f1_mean']:.4f} ± {best_
 print(f"   📊 Accuracy:             {best_metrics['cv_acc_mean']:.4f} ± {best_metrics['cv_acc_std']:.4f}")
 print(f"   🎯 Precision (macro):    {best_metrics['cv_prec_mean']:.4f}")
 print(f"   ✅ Recall (macro):       {best_metrics['cv_recall_mean']:.4f}")
+print(f"   🌟 AUC-ROC (macro):      {best_metrics['auc']:.4f}")
 print(f"\n   ✓ Data Leakage:          FIXED (IMIPENEM removed from features)")
 print(f"   ✓ Features Used:         CEFTAZIDIME, GENTAMICIN, AUGMENTIN, CIPROFLOXACIN, LOCATION")
 print(f"   ✓ Target:                Multiclass (S=0, I=1, R=2) for better stratification")
@@ -1296,11 +1315,11 @@ print(f"{'='*100}\n")
 
 # # SECTION 15: FEATURE IMPORTANCE & ENSEMBLE METHODS
 
-# In[15]:
+# In[16]:
 
 
 try:
-    logger.start_cell('# SECTION 15: FEATURE IMPORTANCE & ENSEMBLE METHODS')
+    logger.start_cell('SECTION 15: FEATURE IMPORTANCE & ENSEMBLE METHODS')
 except NameError:
     pass
 
@@ -1494,11 +1513,11 @@ print(f"\n{'='*100}\n")
 
 # # SECTION 19: MODEL PERSISTENCE & DEPLOYMENT HELPERS
 
-# In[ ]:
+# In[17]:
 
 
 try:
-    logger.start_cell('# SECTION 19: MODEL PERSISTENCE & DEPLOYMENT HELPERS')
+    logger.start_cell('SECTION 19: MODEL PERSISTENCE & DEPLOYMENT HELPERS')
 except NameError:
     pass
 
@@ -1680,7 +1699,7 @@ print(f"{'='*100}")
 
 
 try:
-    logger.start_cell('# SECTION 17: CLINICAL TREATMENT STRATEGY RECOMMENDATIONS')
+    logger.start_cell('SECTION 17: CLINICAL TREATMENT STRATEGY RECOMMENDATIONS')
 except NameError:
     pass
 

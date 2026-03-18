@@ -311,8 +311,8 @@ breakpoints = {
 
 ## 📁 Project Structure
 
-```
-main.ipynb
+```text
+main.py / main.ipynb
 ├── SECTION 1: Initialization & Setup (Libraries, config)
 ├── SECTION 2-6: Data Loading & Exploratory Analysis
 ├── SECTION 7-10: Data Cleaning & Preprocessing
@@ -400,14 +400,13 @@ cd /Users/shivammaurya/Downloads/Antimicrobial\ Resistance\ Dataset
 pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost lightgbm scipy
 ```
 
-3. **Open notebook**
+3. **Run the analysis pipeline**
 
 ```bash
-jupyter notebook main.ipynb
+python main.py
 ```
-
-4. **Run all cells** (Kernel → Restart & Run All)
-   - Execution time: ~5-10 minutes
+   - Execution time: ~2-5 minutes
+   - Automatically creates an `outputs/` directory with organized logs and visualizations for each section.
    - GPU optional (CPU sufficient for this dataset size)
 
 ---
@@ -719,18 +718,6 @@ A: Recommend quarterly retraining with:
 
 ## 📮 Contact & Support
 
-**For Questions & Collaboration:**
-
-- 📧 Email: [your-email@institution.org]
-- 🤝 Discussions: Project repository discussions
-
-**Report a Bug:**
-
-- Provide sample data that triggers the bug
-- Include Python version & library versions
-- Describe expected vs actual behavior
+- 📧 Email: [shivammaurya14032005@gmail.com]
 
 ---
-
-**Last Updated:** March 18, 2026
-**Status:** ✅ Production Ready | 🏆 Hackathon Submission
