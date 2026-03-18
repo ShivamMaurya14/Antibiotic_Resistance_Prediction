@@ -1,6 +1,6 @@
 # 🏥 Antimicrobial Resistance Prediction System
 
-**AI-Powered Clinical Decision Support for Optimizing Antibiotic Treatment Strategies**
+** ML Based  Optimizatation of Antibiotic Treatment **
 
 ---
 
