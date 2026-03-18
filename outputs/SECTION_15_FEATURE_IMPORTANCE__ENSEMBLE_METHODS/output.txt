@@ -1,0 +1,72 @@
+
+====================================================================================================
+SECTION 15: FEATURE IMPORTANCE & ENSEMBLE METHODS
+====================================================================================================
+
+[1] FEATURE IMPORTANCE ANALYSIS
+  ✓ Random Forest feature importance extracted
+  ✓ Gradient Boosting feature importance extracted
+  ✓ Extra Trees feature importance extracted
+
+✓ Redirected image save to: outputs/SECTION_15_FEATURE_IMPORTANCE__ENSEMBLE_METHODS/Top_10_Features_-_Random_Forest.jpg
+
+✓ Saved Graph: outputs/Final_Model_Performance_Comparison_5-Fold_CV.jpg
+
+✓ Top 5 Important Features by Model:
+
+  Random Forest:
+    1. CIPROFLOXACIN: 0.1956
+    2. AUGMENTIN: 0.1746
+    3. LOCATION_OSU-S: 0.1716
+    4. LOCATION_IWO-T: 0.1587
+    5. GENTAMICIN: 0.1569
+
+  Gradient Boosting:
+    1. CEFTAZIDIME: 0.4480
+    2. GENTAMICIN: 0.2306
+    3. AUGMENTIN: 0.1247
+    4. CIPROFLOXACIN: 0.0911
+    5. LOCATION_IWO-T: 0.0901
+
+  Extra Trees:
+    1. LOCATION_OSU-S: 0.2672
+    2. LOCATION_IWO-T: 0.2301
+    3. CIPROFLOXACIN: 0.1575
+    4. CEFTAZIDIME: 0.1376
+    5. AUGMENTIN: 0.0806
+
+
+[2] ENSEMBLE VOTING CLASSIFIER
+====================================================================================================
+
+✓ Voting Ensemble Classifier trained
+  - Models: rf, gb, et
+  - F1-Score (macro):     0.6972 ± 0.2472
+  - Accuracy:             0.9891 ± 0.0089
+  - Precision (macro):    0.6964
+  - Recall (macro):       0.6982
+
+
+[3] FINAL MODEL COMPARISON (Baseline + Ensemble)
+====================================================================================================
+
+              Model    F1 (macro)      Accuracy Precision Recall
+      Random Forest 0.7982±0.2472 0.9927±0.0089    0.7964 0.8000
+                KNN 0.7982±0.2472 0.9927±0.0089    0.7964 0.8000
+           AdaBoost 0.7982±0.2472 0.9927±0.0089    0.7964 0.8000
+        Extra Trees 0.6972±0.2472 0.9891±0.0089    0.6964 0.6982
+    Voting Ensemble 0.6972±0.2472 0.9891±0.0089    0.6964 0.6982
+  Gradient Boosting 0.4954±0.0000 0.9818±0.0001    0.4964 0.4945
+Logistic Regression 0.3246±0.0025 0.9488±0.0140    0.3309 0.3187
+          SVM (RBF) 0.3233±0.0038 0.9415±0.0214    0.3309 0.3162
+
+✓ Redirected image save to: outputs/SECTION_15_FEATURE_IMPORTANCE__ENSEMBLE_METHODS/Final_Model_Performance_Comparison_5-Fold_CV.png
+
+✓ Redirected image save to: outputs/SECTION_15_FEATURE_IMPORTANCE__ENSEMBLE_METHODS/Final_Model_Performance_Comparison_5-Fold_CV.jpg
+
+✓ Saved Graph: outputs/Final_Model_Performance_Comparison_5-Fold_CV.jpg
+
+✓ Model performance comparison visualization saved
+
+====================================================================================================
+

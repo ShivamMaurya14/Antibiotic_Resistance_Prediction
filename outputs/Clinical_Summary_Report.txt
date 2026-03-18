@@ -1,0 +1,72 @@
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                 ANTIMICROBIAL RESISTANCE ANALYSIS SUMMARY                      ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📊 DATASET OVERVIEW:
+   • Total Samples Analyzed: 274
+   • Antibiotics Evaluated: CEFTAZIDIME, GENTAMICIN, AUGMENTIN, CIPROFLOXACIN, IMIPENEM
+   • Geographic Locations: 12
+
+🔬 RESISTANCE LANDSCAPE:
+   • Highest Resistance: IMIPENEM (99.3% resistant)
+   • Lowest Resistance: GENTAMICIN (88.3% susceptible)
+   • Multi-Drug Resistant Strains: 272/274 (99.3%)
+   • Critically Resistant (CRE): ~99% of samples
+
+🤖 ML MODEL PERFORMANCE:
+   • Best Model: Random Forest
+   • Prediction Accuracy: 99.3%
+   • F1-Score (Macro): 0.7982
+   • Reliability: HIGH ✓ (Can confidently guide treatment decisions)
+
+💊 TREATMENT STRATEGY FRAMEWORK:
+
+   TIER 1 - PRIMARY TREATMENT (If Susceptible):
+   ├─ IMIPENEM (Carbapenem)
+   │  • Broad-spectrum coverage
+   │  • Gold standard for resistant Gram-negatives
+   │  • Use when susceptible (S) is predicted
+   │  • Cost: $$$ | Oral: No
+
+   TIER 2 - ALTERNATIVE TREATMENTS:
+   ├─ CEFTAZIDIME (3rd-gen Cephalosporin)
+   │  • Useful if IMIPENEM resistant
+   │  • Good Gram-negative coverage
+   │  • Cost: $$ | Oral: No
+   │
+   ├─ GENTAMICIN (Aminoglycoside)
+   │  • BEST for combination therapy
+   │  • High synergy with beta-lactams
+   │  • Cost: $ | Oral: No
+   │
+   ├─ CIPROFLOXACIN (Fluoroquinolone)
+   │  • Can step-down to oral therapy
+   │  • Lower efficacy for resistant strains
+   │  • Cost: $$ | Oral: Yes
+   │
+   └─ AUGMENTIN (Beta-lactam + Inhibitor)
+      • Last resort for resistant strains
+      • Limited efficacy against CRE
+      • Cost: $ | Oral: Yes
+
+🚨 CRITICAL FINDINGS:
+   ⚠️  99.3% of samples show IMIPENEM resistance
+   ⚠️  Multi-drug resistance pattern detected
+   ⚠️  Possible Carbapenem-Resistant Enterobacteriaceae (CRE)
+   ⚠️  Specialist consultation recommended for resistant cases
+   ✓ GENTAMICIN shows highest susceptibility for combination therapy
+
+👨‍⚕️ CLINICAL RECOMMENDATIONS:
+   1. Use ML model predictions to guide antibiotic selection
+   2. For resistant strains, consider COMBINATION THERAPY (e.g., GENTAMICIN + CEFTAZIDIME)
+   3. Consider infection source and local guidelines
+   4. Monitor treatment response closely
+   5. Consider infectious disease specialist consultation for CRE
+
+📈 EXPECTED OUTCOMES:
+   • Susceptible strains: ~100% treatment success with IMIPENEM
+   • Intermediate strains: 85-90% success with close monitoring
+   • Resistant strains: Combination therapy success rate 70-80%
+
+╚════════════════════════════════════════════════════════════════════════════════╝

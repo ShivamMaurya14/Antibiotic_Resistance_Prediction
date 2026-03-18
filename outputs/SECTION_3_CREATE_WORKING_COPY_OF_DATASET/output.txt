@@ -1,0 +1,13 @@
+
+====================================================================================================
+SECTION 3: CREATE WORKING COPY
+====================================================================================================
+
+✅ Working copy created from original dataset
+   Shape: (274, 6)
+   This copy will be modified during preprocessing
+   Original dataset preserved as: Dataset.xlsx
+
+✅ Column names standardized
+
+====================================================================================================

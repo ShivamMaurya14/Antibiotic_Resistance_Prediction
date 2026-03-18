@@ -1,0 +1,45 @@
+
+====================================================================================================
+DATA VALIDATION REPORT
+====================================================================================================
+
+✓ COLUMN COMPLETENESS:
+  ✓ LOCATION: 0 missing (0.00%)
+  ✓ IMIPENEM: 0 missing (0.00%)
+  ✓ CEFTAZIDIME: 0 missing (0.00%)
+  ✓ GENTAMICIN: 0 missing (0.00%)
+  ✓ AUGMENTIN: 0 missing (0.00%)
+  ✓ CIPROFLOXACIN: 0 missing (0.00%)
+
+✓ DATA TYPES:
+  LOCATION: object
+  IMIPENEM: int64
+  CEFTAZIDIME: int64
+  GENTAMICIN: int64
+  AUGMENTIN: int64
+  CIPROFLOXACIN: int64
+
+✓ NUMERIC COLUMNS SUMMARY:
+         IMIPENEM  CEFTAZIDIME  GENTAMICIN   AUGMENTIN  CIPROFLOXACIN
+count  274.000000   274.000000  274.000000  274.000000     274.000000
+mean    24.430657     8.605839   16.806569   11.237226      19.138686
+std      5.788451     8.996017    5.553848    8.141060       7.936269
+min      0.000000     0.000000    0.000000    0.000000       0.000000
+25%     20.000000     0.000000   15.000000    1.000000      17.000000
+50%     24.000000     8.500000   18.000000   12.000000      21.000000
+75%     28.000000    15.000000   20.000000   17.000000      25.000000
+max     40.000000    32.000000   30.000000   35.000000      35.000000
+
+✓ CATEGORICAL COLUMNS SUMMARY:
+
+  LOCATION:
+    Unique values: 12
+    Top values:
+LOCATION
+IFE-T    31
+IWO-T    27
+IFE-S    24
+OSU-T    23
+OSU-C    23
+
+====================================================================================================
