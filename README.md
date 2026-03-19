@@ -7,9 +7,9 @@
 
 ## 🎯 Project Overview
 
-This project develops a **machine learning-based environmental surveillance system** that predicts **IMIPENEM antibiotic resistance** in bacterial isolates collected from butcheries and slaughterhouses in Osun State, Nigeria. Using resistance data from four other antibiotics (CEFTAZIDIME, GENTAMICIN, AUGMENTIN, CIPROFLOXACIN), the system aims to:
+This project develops a **machine learning-based system** that predicts **IMIPENEM antibiotic resistance** in bacterial isolates collected from butcheries and slaughterhouses in Osun State, Nigeria. Using resistance data from four other antibiotics (CEFTAZIDIME, GENTAMICIN, AUGMENTIN, CIPROFLOXACIN), the system aims to:
 
-- ✅ **Predict IMIPENEM resistance** with 79.82% accuracy (F1-score)
+- ✅ **Predict IMIPENEM resistance** with 99.27% accuracy 
 - ✅ **Identify multi-drug resistant strains** (including CRE - Carbapenem-Resistant Enterobacteriaceae)
 - ✅ **Guide optimal treatment selection** based on resistance profiles
 - ✅ **Reduce laboratory testing time and costs** by predicting from cheaper antibiotics
@@ -273,47 +273,6 @@ Output Files:
 
 ---
 
-## 🚀 Installation & Setup
-
-### Requirements
-
-```
-Python >= 3.8
-pandas >= 1.3.0
-numpy >= 1.21.0
-scikit-learn >= 1.0.0
-matplotlib >= 3.5.0
-seaborn >= 0.11.0
-imbalanced-learn >= 0.9.0
-xgboost >= 1.5.0
-lightgbm >= 3.3.0
-scipy >= 1.7.0
-```
-
-### Quick Start
-
-1. **Clone/Download repository**
-
-```bash
-cd /Users/shivammaurya/Downloads/Antimicrobial\ Resistance\ Dataset
-```
-
-2. **Install dependencies**
-
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost lightgbm scipy
-```
-
-3. **Run the analysis pipeline**
-
-```bash
-python main.py
-```
-   - Execution time: ~2-5 minutes
-   - Automatically creates an `outputs/` directory with organized logs and visualizations for each section.
-   - GPU optional (CPU sufficient for this dataset size)
-
----
 
 ## 📖 Usage & Workflow
 
@@ -459,10 +418,6 @@ PREFERRED: GENTAMICIN + CEFTAZIDIME (combination)
 Confidence: 97.27% (ML model accuracy)
 Estimated success: 70-75%
 ```
-
----
-
-
 
 ---
 
