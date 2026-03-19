@@ -180,7 +180,7 @@ Instead of directly testing IMIPENEM (expensive), we predict it using:
 - **IMIPENEM** → Classified as: Susceptible (S), Intermediate (I), or Resistant (R)
   - Using CLSI breakpoints: S≤4, I=8, R≥16 μg/mL
 
-### CLSI Breakpoints Used
+### CLSI Breakpoints Used (WHO STANDARDS)
 
 ```python
 breakpoints = {
@@ -421,9 +421,9 @@ Estimated success: 70-75%
 
 ---
 
-## 🏆 TRACK B: Antibiotic Resistance Prediction (Microbiology + AI)
+## Conclusion
 
-### ✅ Expected Tasks (All COMPLETED)
+### ✅ TRACK B: Expected Tasks (All COMPLETED)
 
 | Task | Status | Evidence |
 |------|--------|----------|
