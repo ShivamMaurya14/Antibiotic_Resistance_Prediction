@@ -1,20 +1,4 @@
 
-====================================================================================================
-SECTION 6: FEATURE ENGINEERING & ENCODING
-====================================================================================================
 
-[1] Target Variable Encoding
-   Classes: ['Intermediate' 'Resistant' 'Susceptible']
-   Mapping: {0: 'Intermediate', 1: 'Resistant', 2: 'Susceptible'}
-
-[2] Location Encoding
-   Locations: ['EDE-C' 'EDE-S' 'EDE-T' 'IFE-C' 'IFE-S' 'IFE-T' 'IWO-C' 'IWO-S' 'IWO-T'
- 'OSU-C' 'OSU-S' 'OSU-T']
-
-[3] Feature Set Created
-   Features: ['IMIPENEM', 'CEFTAZIDIME', 'GENTAMICIN', 'AUGMENTIN', 'CIPROFLOXACIN', 'LOCATION']
-   Shape: (274, 6)
-   Target shape: (274,)
-
-✅ Feature Engineering Complete
-====================================================================================================
+==================================================
+[IPython Executing Cell]
