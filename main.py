@@ -62,7 +62,7 @@ class NotebookOutputLogger(object):
         if self.log_file and not self.log_file.closed:
             self.log_file.close()
 
-if not isinstance(sys.stdout, NotebookOutputLogger):
+if type(sys.stdout).__name__ != "NotebookOutputLogger":
     _original_stdout = sys.stdout
     logger = NotebookOutputLogger(_original_stdout)
     sys.stdout = logger
@@ -70,8 +70,18 @@ else:
     logger = sys.stdout
 
 import matplotlib.pyplot as plt
-_original_savefig = plt.savefig
-_original_show = plt.show
+import importlib
+
+# Rescue from previous bad state
+if getattr(plt.savefig, "__name__", "") == "_custom_savefig":
+    importlib.reload(plt)
+
+if not hasattr(plt, "_original_savefig"):
+    plt._original_savefig = plt.savefig
+    plt._original_show = plt.show
+
+_original_savefig = plt._original_savefig
+_original_show = plt._original_show
 
 def _custom_savefig(fname, *args, **kwargs):
     fig = plt.gcf()

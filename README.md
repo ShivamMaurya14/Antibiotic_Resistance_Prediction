@@ -1,26 +1,10 @@
-# 🏥 Antimicrobial Resistance Prediction System
+# 🏥 Antimicrobial Resistance Prediction (Acu 99.27%, F1 0.7982)
 
-**AI-Powered Clinical Decision Support for Optimizing Antibiotic Treatment Strategies**
-
----
-
-## 📋 Table of Contents
-
-- [Project Overview](#project-overview)
-- [Problem Statement](#problem-statement)
-- [Solution Approach](#solution-approach)
-- [Key Findings](#key-findings)
-- [Dataset Description](#dataset-description)
-- [Model Performance](#model-performance)
-- [Project Structure](#project-structure)
-- [Installation &amp; Setup](#installation--setup)
-- [Usage &amp; Workflow](#usage--workflow)
-- [Results &amp; Visualizations](#results--visualizations)
-- [Treatment Strategy Recommendations](#treatment-strategy-recommendations)
-- [Future Enhancements](#future-enhancements)
-- [Contributors](#contributors)
+**AI/ML for Antibiotic Resistance Prediction/Treatment**
 
 ---
+
+
 
 ## 🎯 Project Overview
 
@@ -35,23 +19,17 @@ This project develops a **machine learning-based environmental surveillance syst
 
 ## 🔬 Problem Statement
 
-### Current Challenge - Environmental AMR in Food Production
+### The Global Challenge (CODECURE TRACK B)
+**Antimicrobial resistance (AMR)** is one of the most pressing global health challenges. Predicting resistance patterns is vital to help guide treatment decisions and improve antibiotic stewardship. The core necessity is to develop a robust machine learning model that predicts antibiotic resistance based on bacterial genetic or phenotypic data, focusing heavily on exploring **which resistance features are most predictive**.
 
-**Antimicrobial resistance (AMR)** is a critical global health threat, especially in food production environments:
+### Real-World Application - Environmental AMR
+We apply this hackathon objective directly to an emerging frontline: **food production environments**.  
+- 🔴 **99.3%** of samples in our Nigerian butchery dataset already show IMIPENEM resistance.
+- 🔴 Carbapenem-resistant bacteria (CRE) are actively emerging in these poorly screened settings.
+- 🔴 Direct IMIPENEM testing remains **expensive, time-consuming, and highly specialized**.
+- 🔴 Environmental surveillance gaps in developing countries prevent early detection.
+- 🔴 Cross-contamination from food production poses a risk of direct human transmission.
 
-- 🔴 **99.3%** of samples in our Nigerian butchery dataset show IMIPENEM resistance
-- 🔴 Carbapenem-resistant bacteria (CRE) are emerging in food production settings
-- 🔴 IMIPENEM testing is **expensive, time-consuming, and specialized**
-- 🔴 Environmental surveillance gaps in developing countries prevent early detection
-- 🔴 Cross-contamination from food production → potential human transmission
-
-### Public Health Impact
-
-- ❌ Undetected resistance spread through food supply chains
-- ❌ Limited diagnostic capacity in resource-constrained settings
-- ❌ Risk of zoonotic transmission to human populations
-- ❌ No systematic framework for environmental AMR monitoring
-- ❌ Food security concerns linked to resistant pathogens
 
 ---
 
@@ -73,34 +51,6 @@ Instead of directly testing IMIPENEM (expensive), we predict it using:
 - Beta-lactamase production → Destroys multiple beta-lactams
 - Efflux pumps → Pump out multiple drug families
 - Uptake channel mutations → Affect multiple compounds
-
-### ML Pipeline Architecture
-
-```
-Data Input (274 bacterial samples × 15 features)
-    ↓
-[SECTION 1-10: DATA CLEANING & PREPROCESSING]
-    • Remove duplicates (2 removed)
-    • Handle outliers (IQR method)
-    • Impute missing values
-    • Feature encoding & scaling
-    ↓
-[SECTION 11-14: MODEL TRAINING & OPTIMIZATION]
-    • 7 baseline models trained
-    • Stratified 5-fold cross-validation
-    • Class imbalance handling (class_weight='balanced')
-    • Hyperparameter tuning (RandomizedSearchCV)
-    ↓
-[SECTION 15: FEATURE IMPORTANCE ANALYSIS]
-    • Extract feature importance from tree-based models
-    • Voting ensemble (RF + GB + ExtraTree)
-    ↓
-[SECTION 17: CLINICAL DECISION SUPPORT]
-    • Treatment strategy algorithm
-    • Sample clinical recommendations
-    ↓
-Predicted IMIPENEM Resistance + Treatment Recommendation
-```
 
 ---
 
@@ -195,41 +145,6 @@ Predicted IMIPENEM Resistance + Treatment Recommendation
 
 ---
 
-## 📊 Dataset Description
-
-### 🎯 Datasets Referenced (CodeCure Biohackathon TRACK B)
-
-#### ✅ **Primary Dataset: Antimicrobial Resistance Dataset** (ACTIVE)
-
-- **Source Link:** [https://data.mendeley.com/datasets/ccmrx8n7mk/1](https://data.mendeley.com/datasets/ccmrx8n7mk/1)
-- **Usage:** ✅ Active dataset used for all model training and analysis
-- **Contains:**
-  - Bacterial isolates from environmental or clinical samples
-  - Multiple antibiotics tested against each isolate
-  - Susceptibility outcomes (Resistant, Susceptible, Intermediate)
-  - Structured tabular data suitable for classification models
-
-#### 📌 **Secondary Dataset: Kaggle Antibiotic Resistance Dataset** (Reference)
-
-- **Source Link:** [Multi-Resistance Antibiotic Susceptibility Dataset](https://www.kaggle.com/datasets/adilimadeddinehosni/multi-resistance-antibiotic-susceptibility)
-- **Description:** Bacterial isolates tested against a panel of antibiotics with corresponding susceptibility outcomes. Each record represents a bacterial strain and its response to different antimicrobial agents, enabling analysis of multi-drug resistance (MDR) patterns and susceptibility trends.
-- **Potential Use:** Additional validation, comparative analysis, cross-dataset resistance pattern comparison
-- **Contains:**
-  - Bacterial isolate identifiers and strain information
-  - Antibiotics tested against each isolate  
-  - Susceptibility outcomes indicating resistance or sensitivity
-  - Resistance profiles across multiple antibiotics for multi-drug resistance analysis
-- **Hackathon Purpose:** Explore resistance patterns, train classification models, analyze relationships between bacterial strains and antibiotic susceptibility
-
-#### 🔬 **Optional Dataset: CARD Database** (Reference)
-
-- **Source Link:** [https://card.mcmaster.ca/download](https://card.mcmaster.ca/download)
-- **Description:** Comprehensive Antibiotic Resistance Database with genomic insights
-- **Potential Use:** Future enhancement for resistance gene annotations
-- **Contains:** Resistance genes, gene annotations, antibiotic associations
-
----
-
 ### Source
 
 - **Bacterial Pathogen:** Antimicrobial-resistant bacteria (likely *Enterobacteriaceae*)
@@ -295,17 +210,7 @@ breakpoints = {
 |      | Logistic Regression           | 0.3246           | 0.9488           | 0.3309    | 0.3187 |         |
 |      | SVM (RBF)                     | 0.3233           | 0.9415           | 0.3309    | 0.3162 |         |
 
-### Optimization Strategies Tested
 
-| Strategy                                   | Result                        | Status                             |
-| ------------------------------------------ | ----------------------------- | ---------------------------------- |
-| Hyperparameter Tuning (RandomizedSearchCV) | F1=0.7982 (no improvement)    | Model at local optimum             |
-| Cost-Sensitive Learning (class_weight=200) | F1=0.7982 (no improvement)    | Limited by data scarcity           |
-| Advanced Stacking Ensemble                 | F1=NaN (failed)               | Conflicting base model predictions |
-| Polynomial Feature Engineering             | F1=0.7982 (no improvement)    | Linear patterns already captured   |
-| Threshold Optimization                     | F1=1.0 (overfitting artifact) | Not generalizable                  |
-
-**Conclusion:** Current F1=0.7982 represents **near-optimal performance** given extreme class imbalance (1:1:272 ratio).
 
 ---
 
@@ -558,70 +463,11 @@ Estimated success: 70-75%
 
 ---
 
-## 🔮 Future Enhancements
 
-### Short-term (1-3 months)
-
-- [ ] Expand dataset to 500+ samples (increase minority class samples)
-- [ ] Add more antibiotics (MEROPENEM, ERTAPENEM, etc.)
-- [ ] Implement real-time web dashboard for clinicians
-- [ ] Add country-specific resistance guidelines
-- [ ] Generate PDF clinical reports automatically
-
-### Medium-term (3-6 months)
-
-- [ ] Deploy as mobile app for field hospitals
-- [ ] Integration with hospital LIMS (Laboratory Information Management System)
-- [ ] Multi-center validation studies
-- [ ] Add genomic data (16S rRNA, resistance genes)
-- [ ] Implement active learning for continuous improvement
-
-### Long-term (6-12 months)
-
-- [ ] Global resistance dataset (WHO collaboration)
-- [ ] Real-time monitoring & trend analysis
-- [ ] Predictive epidemiology (forecasting resistance spread)
-- [ ] Drug interaction warnings
-- [ ] Personalized treatment optimization based on patient factors
-
-### Research Directions
-
-- [ ] Deep learning (LSTM/Transformer) for temporal resistance tracking
-- [ ] Explainable AI (SHAP, LIME) for clinical interpretability
-- [ ] Ensemble methods with genomic data
-- [ ] Multi-task learning (predict multiple antibiotic outcomes)
-- [ ] Causal inference for treatment effectiveness
-
----
-
-## 📊 Expected Outcomes & Impact
-
-### Clinical Impact
-
-- ✅ **30% reduction** in empirical treatment failures
-- ✅ **24-hour faster** diagnosis (predict vs culture)
-- ✅ **15% cost savings** (avoid expensive testing)
-- ✅ **25% mortality reduction** (faster optimal treatment)
-
-### Research Impact
-
-- ✅ First ML system for AMR cross-prediction in Nigeria
-- ✅ Demonstrates feasibility of rapid resistance prediction
-- ✅ Framework applicable to other pathogens/regions
-- ✅ Published in peer-reviewed journals (planned)
-
-### Public Health Impact
-
-- ✅ Supports **WHO antimicrobial stewardship program**
-- ✅ Helps detect **CRE emergence early**
-- ✅ Enables data-driven infection control
-- ✅ Supports **SDG 3: Good Health & Well-being**
 
 ---
 
 ## 🏆 TRACK B: Antibiotic Resistance Prediction (Microbiology + AI)
-
-**CodeCure Biohackathon Challenge:** Antimicrobial resistance is one of the most pressing global health challenges. Predicting resistance patterns can help guide treatment decisions and improve antibiotic stewardship. Teams develop models to predict antibiotic resistance based on bacterial genetic or phenotypic data and explore which features are most predictive.
 
 ### ✅ Expected Tasks (All COMPLETED)
 
@@ -632,7 +478,8 @@ Estimated success: 70-75%
 | **3. Explore which features are most predictive** | ✅ COMPLETED | Section 15: Tree-based feature importance extraction from RF, GB, ExtraTree models. CEFTAZIDIME identified as top predictor (44.8% importance from GB). Feature correlation analysis. VotingEnsemble created (3-model soft voting). Feature importance visualizations generated. |
 | **4. Suggest potential treatment strategies** | ✅ COMPLETED | Section 17: Resistance-guided treatment algorithm implemented. 5-tier antibiotic hierarchy (IMIPENEM→CEFTAZIDIME→GENTAMICIN→CIPROFLOXACIN→AUGMENTIN). Treatment decision logic: IF susceptible→PRIMARY use, IF intermediate→CAUTION, IF resistant→ALTERNATIVES+COMBOS. 5 real patient case recommendations with clinical outcomes (70-100% success rates). |
 
-### 📦 Required Deliverables (Hackathon Specification)
+
+### 📦 Required Deliverables
 
 | Deliverable | Status | Implementation |
 |-------------|--------|-----------------|
@@ -649,6 +496,7 @@ Estimated success: 70-75%
 | **Antimicrobial Resistance Dataset**     | Primary        | ✅**ACTIVE** | [Mendeley Link](https://data.mendeley.com/datasets/ccmrx8n7mk/1)                                              |
 | **Kaggle Antibiotic Resistance Dataset** | Secondary      | 📌 Referenced      | [Kaggle Link](https://www.kaggle.com/datasets/adilimadeddinehosni/multi-resistance-antibiotic-susceptibility) |
 | **CARD Database**                        | Optional       | 📌 Referenced      | [CARD Link](https://card.mcmaster.ca/download)                                                                |
+
 
 ### 🌟 Bonus Achievements
 
