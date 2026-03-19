@@ -5,7 +5,6 @@
 ---
 
 
-
 ## 🎯 Project Overview
 
 This project develops a **machine learning-based environmental surveillance system** that predicts **IMIPENEM antibiotic resistance** in bacterial isolates collected from butcheries and slaughterhouses in Osun State, Nigeria. Using resistance data from four other antibiotics (CEFTAZIDIME, GENTAMICIN, AUGMENTIN, CIPROFLOXACIN), the system aims to:
