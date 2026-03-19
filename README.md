@@ -1,4 +1,4 @@
-# 🏥 Antimicrobial Resistance Prediction (Acu 99.27%, F1 0.7982)
+# 🏥 Antimicrobial Resistance Prediction (Acu 99.27%)
 
 **AI/ML for Antibiotic Resistance Prediction/Treatment**
 
