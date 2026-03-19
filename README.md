@@ -216,7 +216,7 @@ breakpoints = {
 ## 📁 Project Structure
 
 ```text
-main.py / main.ipynb
+main.ipynb
 ├── SECTION 1: Initialization & Setup (Libraries, config)
 ├── SECTION 2-6: Data Loading & Exploratory Analysis
 ├── SECTION 7-10: Data Cleaning & Preprocessing
